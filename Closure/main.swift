@@ -33,17 +33,48 @@ test(a: 20, b: f)
 var country = ["Canada","Abd","India","Bhutan","Nepal","China","USA","Mexico"]
 
 
-func mySort(s1:String, s2: String) -> Bool
-{
-    return s1 > s2
-}
+//func mySort(s1:String, s2: String) -> Bool
+//{
+//    return s1 > s2
+//}
 
-print(mySort(s1:"abc", s2: "bac"))
+//print(mySort(s1:"abc", s2: "bac"))
 
 print(country)
 //country.sort()
 //let c = country.sorted()
 //print(c)
-country.sort(by: mySort(s1:s2:))
+//country.sort(by: mySort(s1:s2:))
+//country.sort(by:
+   // { (s1: String, s2: String) -> Bool in
+   // return s1 > s2
+  //  })
+
+country.sort(by:
+    { (s1, s2) -> Bool in
+return s1 > s2
+})
 print(country)
+country.sort(by:
+    {
+return $0 > $1
+})
+print(country)
+country.sort(by: >)
+
+print(country)
+
+let s = country.map {(str) -> String in
+    return "\(str.count) - \(str)"
+}
+
+print(s)
+print(s)
+
+
+
+
+
+
+
 
